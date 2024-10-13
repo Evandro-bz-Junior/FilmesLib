@@ -1,0 +1,23 @@
+.no-results{
+    color: #fff;
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.load-more {
+    background-color: #fc9e06;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block;
+
+    &:hover{
+        background-color: #eead4b;
+    }
+  } 
