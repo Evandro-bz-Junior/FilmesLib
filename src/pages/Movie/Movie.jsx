@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import StarRating from '../../components/StarRating/StarRating';
 import ReactLoading from 'react-loading'
 import axios from 'axios';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player' 
 
 import './Movie.scss'
 
@@ -19,10 +19,10 @@ function Movie() {
   useEffect(() => {
     getMovie();
   }, [id]);
-
+ 
   useEffect(() => {
     if (movie) {
-      getTrailer(movie);
+      getTrailer(movie);  
     }
   }, [movie]);
 
@@ -45,22 +45,36 @@ function Movie() {
     });
   };
 
-  const getTrailer = (movie) => {
-    axios.get(`https://www.googleapis.com/youtube/v3/search`, {
-      params: {
-        q: `${movie.title} official trailer pt-br`,
-        key: 'AIzaSyBEVPIIt5PSGyoL9baJY6AVDupjHWBcqJM',
-        order: 'rating'
-      }
-    }).then(response => {
-      if (response.data.items && response.data.items.length > 0) {
-        const trailerUrl = `https://www.youtube.com/watch?v=${response.data.items[0].id.videoId}`;
-        setTrailerUrl(trailerUrl);
-      } else {
-        console.log('Nenhum trailer encontrado');
-      }
-    }).catch(error => console.log("Erro ao buscar o trailer: ", error));
-  };
+  const getTrailer = async (movie) => {
+  setIsLoading(true);
+  await axios({
+    method: 'GET',
+    url: `https://api.themoviedb.org/3/movie/${movie.id}/videos`,
+    params: {
+      api_key: 'bcca6b957b100ca5154d4459e33679ec',
+      language: 'pt-BR',
+    }
+  }).then(response => {
+    const videos = response.data.results;
+
+    // Pega o primeiro vídeo que seja do tipo 'Trailer', independente do site
+    const trailer = videos.find((video) => video.type === 'Trailer');
+
+    if (trailer) {
+      const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`;
+      setTrailerUrl(trailerUrl);
+    } else {
+      console.log('Nenhum trailer encontrado.');
+    }
+    setIsLoading(false);
+  }).catch(error => {
+    console.error("Erro ao buscar o trailer:", error);
+    setIsLoading(false);
+  });
+};
+
+  
+  
 
   if (isLoading) {
     return (
