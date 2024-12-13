@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
 import { useSearchParams } from 'react-router-dom';
-import MovieCard from '../../../components/MovieCard/MovieCard';
+import MovieCard from '../../components/MovieCard/MovieCard';
 
 import './Search.scss';
 

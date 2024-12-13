@@ -57,7 +57,7 @@ function Movie() {
   }).then(response => {
     const videos = response.data.results;
 
-    // Pega o primeiro vídeo que seja do tipo 'Trailer', independente do site
+    
     const trailer = videos.find((video) => video.type === 'Trailer');
 
     if (trailer) {
