@@ -1,12 +1,18 @@
-# FilmesLib
+## 🌍FilmesLib
 
 ## Descrição
 
-FilmesLib é um projeto web que exibe informações sobre filmes populares e tendências atuais, utilizando a poderosa [TMDB API](https://www.themoviedb.org/documentation/api). Com uma interface intuitiva, o projeto permite explorar:
+O FilmesLib é um portal fictício que permite explorar filmes populares, tendências da semana, e detalhes completos de filmes, utilizando a TMDB API. O site oferece uma interface intuitiva com funcionalidades como busca por nome, filtros por gênero e popularidade, e páginas detalhadas com informações como título, sinopse, nota, orçamento, bilheteria, duração, data de lançamento e trailer. O projeto foi desenvolvido para ser responsivo, garantindo uma boa experiência em dispositivos móveis e desktops.
 
-- **Filmes em Tendência na Semana:** Uma listagem dos filmes mais populares da última semana.
-- **Filmes por Popularidade e Gênero:** Filtros que organizam filmes por categorias específicas.
-- **Detalhes Completo dos Filmes:** Informações aprofundadas sobre qualquer filme selecionado.
+🔗 [Acesse o site ao vivo](https://filmes-lib-two.vercel.app/)  
+
+
+## Objetivos do Projeto
+Consolidar conhecimentos em HTML5, SCSS, JavaScript e React.js.
+
+Criar um site responsivo com integração de API.
+
+Explorar deploy com Vercel.
 
 ---
 
@@ -54,10 +60,15 @@ FilmesLib é um projeto web que exibe informações sobre filmes populares e ten
   - Framework: [React.js](https://reactjs.org/)
   - React Router (para navegação entre páginas)
   - React Icons (para ícones)
+  - Vercel           # Hospedagem e deploy
 
 - **API:**
   - Integração com a [TMDB API](https://www.themoviedb.org/documentation/api)
   - Axios (para chamadas à API)
 
 ---
+## 📄 Licença
+Este projeto está licenciado sob a Licença MIT. Sinta-se à vontade para usar, modificar e distribuir o código conforme os termos da licença. Consulte o arquivo LICENSE para mais detalhes.
 
+## ✈️ Notas Finais
+O FilmesLib é um projeto fictício criado exclusivamente para fins educacionais e prática de desenvolvimento web. Feedback, sugestões ou contribuições são sempre bem-vindos!
